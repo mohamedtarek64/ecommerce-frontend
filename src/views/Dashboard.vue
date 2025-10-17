@@ -132,7 +132,7 @@
 </template>
 
 <script setup>
-import { useDashboard } from '@/composables/Dashboard.js';
+import { useDashboard } from '@/composables/admin/Dashboard.js';
 
 // Use the separated script
 const {
