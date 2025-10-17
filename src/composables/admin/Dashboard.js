@@ -1,6 +1,23 @@
 // Admin Dashboard JavaScript Logic
 import { useAdminDashboard } from '@/composables/useAdminDashboard.js'
 
+export function useDashboard() {
+  // Use the admin dashboard composable
+  const {
+    dashboardData,
+    recentOrders,
+    isLoading,
+    error
+  } = useAdminDashboard()
+
+  return {
+    dashboardData,
+    recentOrders,
+    isLoading,
+    error
+  }
+}
+
 export function useDashboardState() {
   // Use the admin dashboard composable
   const {
