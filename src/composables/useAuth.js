@@ -68,7 +68,7 @@ export function useAuth() {
         throw new Error('No refresh token available')
       }
 
-      const response = await fetch('http://127.0.0.1:8000/api/auth/refresh', {
+      const response = await fetch('https://web-production-62770.up.railway.app/api/auth/refresh', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

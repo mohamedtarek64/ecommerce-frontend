@@ -83,7 +83,7 @@ export const isUserAdmin = () => {
 
 // API URL helpers
 export const buildApiUrl = (endpoint, params = {}) => {
-  const baseUrl = import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000/api'
+  const baseUrl = import.meta.env.VITE_API_BASE_URL || 'https://web-production-62770.up.railway.app/api'
   let url = `${baseUrl}${endpoint}`
 
   if (Object.keys(params).length > 0) {
