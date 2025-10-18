@@ -6,10 +6,10 @@
 
 export const API_CONFIG = {
   // Base URL from environment or default
-  BASE_URL: import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000/api',
+  BASE_URL: import.meta.env.VITE_API_BASE_URL || 'http://web-production-62770.up.railway.app/api',
 
   // Remove /api suffix for full base URL
-  BASE_URL_WITHOUT_API: (import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000/api').replace('/api', ''),
+  BASE_URL_WITHOUT_API: (import.meta.env.VITE_API_BASE_URL || 'http://web-production-62770.up.railway.app/api').replace('/api', ''),
 
   // Timeout settings
   TIMEOUT: 10000,
