@@ -6,7 +6,7 @@ import { requestDeduplicator } from '../utils/requestDeduplication.js'
 // API Service for Backend Integration
 class ApiService {
   constructor() {
-    this.baseURL = 'http://web-production-62770.up.railway.app/api'
+    this.baseURL = 'http://127.0.0.1:8000/api'
     this.timeout = 5000 // Reduced timeout for faster response
     this.cache = apiCache // Use centralized cache
     this.requestQueue = new Map()

@@ -59,9 +59,9 @@ export default defineConfig({
     },
     proxy: {
       '/api': {
-        target: 'https://web-production-62770.up.railway.app',
+        target: 'http://localhost:8000',
         changeOrigin: true,
-        secure: true
+        secure: false
       }
     }
   },
