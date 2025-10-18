@@ -255,7 +255,7 @@ const handleSocialLogin = async (provider) => {
     console.log(`🔧 Starting ${provider} login...`)
 
     // Get redirect URL from backend
-    const url = `http://localhost:8000/api/auth/${provider}`
+    const url = `http://127.0.0.1:8000/api/auth/${provider}`
     console.log(`🔧 Fetching from: ${url}`)
 
     const response = await fetch(url, {

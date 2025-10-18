@@ -1,7 +1,7 @@
 // Image API Service - handles all image-related API calls with token authentication
 // Uses products_women table from database
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://web-production-62770.up.railway.app/api'
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://127.0.0.1:8000/api'
 
 // Helper function to get auth headers
 const getAuthHeaders = () => {

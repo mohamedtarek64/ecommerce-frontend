@@ -326,7 +326,7 @@ const handleSocialRegister = async (provider) => {
     error.value = ''
 
     // Get redirect URL from backend
-    const response = await fetch(`http://localhost:8000/api/auth/${provider}`)
+    const response = await fetch(`http://127.0.0.1:8000/api/auth/${provider}`)
     const data = await response.json()
 
     if (data.success && data.data.redirect_url) {

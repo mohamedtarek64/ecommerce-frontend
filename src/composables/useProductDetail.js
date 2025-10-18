@@ -154,7 +154,7 @@ export function useProductDetail() {
     if (!productId) return
 
     try {
-      const response = await fetch(`http://web-production-62770.up.railway.app/api/sizes/product/${productId}`)
+      const response = await fetch(`http://127.0.0.1:8000/api/sizes/product/${productId}`)
       const data = await response.json()
 
       if (data.success) {
@@ -173,7 +173,7 @@ export function useProductDetail() {
     if (!productId) return
 
     try {
-      const response = await fetch(`http://web-production-62770.up.railway.app/api/reviews/product/${productId}`)
+      const response = await fetch(`http://127.0.0.1:8000/api/reviews/product/${productId}`)
       const data = await response.json()
 
       if (data.success) {
@@ -332,7 +332,7 @@ export function useProductDetail() {
 
   const checkServerStatus = async () => {
     try {
-      const response = await fetch('http://web-production-62770.up.railway.app/api/debug-products', {
+      const response = await fetch('http://127.0.0.1:8000/api/debug-products', {
         method: 'GET',
         headers: {
           'Accept': 'application/json'

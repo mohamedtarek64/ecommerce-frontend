@@ -182,7 +182,7 @@ export const cartSidebar = {
         return 18 // Default for testing
       }
 
-      const response = await fetch(`http://web-production-62770.up.railway.app/api/cart/?user_id=${getCurrentUserId()}`, {
+      const response = await fetch(`http://127.0.0.1:8000/api/cart/?user_id=${getCurrentUserId()}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -389,7 +389,7 @@ export const cartSidebar = {
         return 18 // Default for testing
       }
 
-      const response = await fetch('http://web-production-62770.up.railway.app/api/cart/update-quantity', {
+      const response = await fetch('http://127.0.0.1:8000/api/cart/update-quantity', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -68,7 +68,7 @@ export function useAuth() {
         throw new Error('No refresh token available')
       }
 
-      const response = await fetch('https://web-production-62770.up.railway.app/api/auth/refresh', {
+      const response = await fetch('https://127.0.0.1:8000/api/auth/refresh', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -199,7 +199,7 @@ export function useAuth() {
       // Try Laravel API first, fallback to direct login
       let response
       try {
-        response = await fetch('http://web-production-62770.up.railway.app/api/auth/login', {
+        response = await fetch('http://127.0.0.1:8000/api/auth/login', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -210,7 +210,7 @@ export function useAuth() {
       } catch (error) {
         console.warn('Laravel API failed, trying direct login:', error)
         // Fallback to direct login
-        response = await fetch('http://web-production-62770.up.railway.app/test-login.php', {
+        response = await fetch('http://127.0.0.1:8000/test-login.php', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -288,7 +288,7 @@ export function useAuth() {
     authState.error = null
 
     try {
-      const response = await fetch('http://web-production-62770.up.railway.app/api/auth/register', {
+      const response = await fetch('http://127.0.0.1:8000/api/auth/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -341,7 +341,7 @@ export function useAuth() {
     try {
       const token = getToken()
       if (token) {
-        await fetch('http://web-production-62770.up.railway.app/api/auth/logout', {
+        await fetch('http://127.0.0.1:8000/api/auth/logout', {
           method: 'POST',
           headers: getApiHeaders()
         })
@@ -366,7 +366,7 @@ export function useAuth() {
     }
 
     try {
-      const response = await fetch('http://web-production-62770.up.railway.app/api/auth/profile', {
+      const response = await fetch('http://127.0.0.1:8000/api/auth/profile', {
         headers: getApiHeaders()
       })
 

@@ -104,7 +104,7 @@ export const useProductDetailAPI = () => {
 
     try {
       // Build URL with optional query parameters
-      let url = `http://web-production-62770.up.railway.app/api/products/${productId}`
+      let url = `http://127.0.0.1:8000/api/products/${productId}`
       const params = new URLSearchParams()
 
       if (options.category) {
@@ -161,7 +161,7 @@ export const useProductDetailAPI = () => {
       }
 
       // Try to get colors from product_colors table via direct query
-      const response = await fetch(`http://web-production-62770.up.railway.app/api/product-colors/${productId}`)
+      const response = await fetch(`http://127.0.0.1:8000/api/product-colors/${productId}`)
 
       if (response.ok) {
         const data = await response.json()
@@ -240,7 +240,7 @@ export const useProductDetailAPI = () => {
 
       console.log('Sending request to API:', requestBody)
 
-      const response = await fetch('http://web-production-62770.up.railway.app/api/cart/add', {
+      const response = await fetch('http://127.0.0.1:8000/api/cart/add', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -276,7 +276,7 @@ export const useProductDetailAPI = () => {
   const optimizedLoadCart = async (userId) => {
     try {
       console.log('=== OPTIMIZED LOAD CART STARTED ===')
-      const response = await fetch(`http://web-production-62770.up.railway.app/api/cart/?user_id=${userId}`)
+      const response = await fetch(`http://127.0.0.1:8000/api/cart/?user_id=${userId}`)
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`)
@@ -300,7 +300,7 @@ export const useProductDetailAPI = () => {
 
       console.log('🔍 loadWishlistCount - User ID:', userId)
 
-      const response = await fetch(`http://web-production-62770.up.railway.app/api/wishlist/count?user_id=${userId}`)
+      const response = await fetch(`http://127.0.0.1:8000/api/wishlist/count?user_id=${userId}`)
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`)
@@ -321,7 +321,7 @@ export const useProductDetailAPI = () => {
   // Load product sizes function
   const loadProductSizes = async (productId) => {
     try {
-      const response = await fetch(`http://web-production-62770.up.railway.app/api/products/${productId}/sizes`)
+      const response = await fetch(`http://127.0.0.1:8000/api/products/${productId}/sizes`)
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`)
@@ -341,7 +341,7 @@ export const useProductDetailAPI = () => {
   // Load product reviews function
   const loadProductReviews = async (productId) => {
     try {
-      const response = await fetch(`http://web-production-62770.up.railway.app/api/products/${productId}/reviews`)
+      const response = await fetch(`http://127.0.0.1:8000/api/products/${productId}/reviews`)
 
       if (!response.ok) {
         console.warn(`Reviews API not available for product ${productId}`)
@@ -488,7 +488,7 @@ export const useProductDetailAPI = () => {
         params.append('product_id', productId)
       }
 
-      const response = await fetch(`http://web-production-62770.up.railway.app/api/products/recommended?${params.toString()}`)
+      const response = await fetch(`http://127.0.0.1:8000/api/products/recommended?${params.toString()}`)
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`)
@@ -541,7 +541,7 @@ export const useProductDetailAPI = () => {
 
   const loadTrendingProducts = async () => {
     try {
-      const response = await fetch('http://web-production-62770.up.railway.app/api/products/trending')
+      const response = await fetch('http://127.0.0.1:8000/api/products/trending')
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`)
